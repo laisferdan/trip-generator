@@ -13,7 +13,7 @@ public class TripGeneratorController {
     private final AtomicLong  counter = new AtomicLong();
     @GetMapping
     @ResponseBody
-    public PlannedTrip sayHello(@RequestParam(name = "World!", required = false, defaultValue = "Stanger") String name) {
+    public PlannedTrip sayHello(@RequestParam(name = "World", required = false, defaultValue = "World") String name) {
         return new PlannedTrip(counter.incrementAndGet(), String.format(template, name));
     }
 }
